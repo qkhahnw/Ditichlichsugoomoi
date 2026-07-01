@@ -59,8 +59,9 @@ header {
 /* VÙNG TƯƠNG TÁC CHÍNH */
 main {
     position: relative; width: 100vw; height: calc(100vh - 145px);
-    background: #e0e5ec; overflow: hidden; display: flex; justify-content: center; align-items: center;
+    background: #e0e5ec; overflow: hidden; display: flex; justify-content: center; align-items: center; cursor: grab;
 }
+main:active { cursor: grabbing; }
 
 #map-container {
     position: relative; display: inline-block; line-height: 0;
