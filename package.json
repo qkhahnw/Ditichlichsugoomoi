@@ -1,0 +1,17 @@
+{
+  "name": "ditich-go-o-moi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Trang số hóa Di tích lịch sử Gò Ô Môi - Express + SQLite",
+  "scripts": {
+    "init-db": "node server/init-db.js",
+    "start": "node server/init-db.js && node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

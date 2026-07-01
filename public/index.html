@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Công Trình Số Hóa Di Tích Lịch Sử Gò Ô Môi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <div class="logo-group">
+                <div class="logo-row">
+                    <img src="images/logos/logo5.png" alt="Logo 5">
+                    <img src="images/logos/logo6.png" alt="Logo 6">
+                </div>
+                <span class="logo-caption" id="logo-left-caption">Phường Phú Thuận</span>
+            </div>
+        </div>
+
+        <div class="title-container">
+            <h1 id="main-header-title">CÔNG TRÌNH SỐ HÓA DI TÍCH LỊCH SỬ GÒ Ô MÔI</h1>
+        </div>
+
+        <div class="header-right">
+            <div class="logo-group">
+                <div class="logo-row">
+                    <img src="images/logos/logo3.png" alt="Logo 3">
+                    <img src="images/logos/logo4.png" alt="Logo 4">
+                    <img src="images/logos/logo1.png" alt="Logo 1">
+                    <img src="images/logos/logo2.png" alt="Logo 2">
+                </div>
+                <span class="logo-caption" id="logo-right-caption" style="min-width: 250px;">Khoa Công nghệ thông tin<br>Trường Đại học Tôn Đức Thắng</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-area">
+
+        <div class="menu-buttons-container">
+            <button class="toggle-menu-btn" id="btn-overview" onclick="openSideMenu()">☰ TỔNG QUAN DI TÍCH</button>
+            <button class="toggle-menu-btn" id="btn-gallery" onclick="openGalleryModal()">🖼 HÌNH ẢNH TẠI DI TÍCH</button>
+
+            <div class="lang-switcher" id="lang-menu">
+                <button class="toggle-menu-btn" style="width: 100%; display: flex; justify-content: space-between; align-items: center;" onclick="toggleLangMenu()">
+                    <span id="lang-btn-text">🌐 Ngôn ngữ (language)</span> ▾
+                </button>
+                <div class="lang-options">
+                    <div class="lang-opt active-lang" onclick="changeLanguage('vi')">🇻🇳 Tiếng Việt</div>
+                    <div class="lang-opt" onclick="changeLanguage('en')">🇬🇧 English</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="side-menu">
+            <button class="close-menu-btn" onclick="closeSideMenu()">×</button>
+            <h2 class="side-menu-title" id="side-menu-title">Di Tích Lịch Sử Gò Ô Môi</h2>
+
+            <div class="menu-settings-block">
+                <div class="voice-control-inline">
+                    <div class="voice-header" id="voice-header-text">🔊 Thuyết minh tự động</div>
+                    <audio id="audio-player" controls>
+                        <source id="audio-source" src="audio/voice-vi.mp3" type="audio/mpeg">
+                        Trình duyệt của bạn không hỗ trợ thẻ audio.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="side-menu-content" id="side-menu-content">
+                </div>
+        </div>
+
+        <div id="map-container">
+            <img src="images/map/go-o-moi.jpg" id="model-image" alt="Mô Hình Gò Ô Môi">
+            </div>
+
+    </main>
+
+    <footer id="footer-credit">
+        </footer>
+
+    <div id="info-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal-btn" onclick="closeModal('info-modal')">×</span>
+            <h2 class="modal-title" id="modal-title">Tiêu Đề</h2>
+            <img id="modal-image" src="" alt="Hình minh họa">
+            <div class="modal-body" id="modal-text">Nội dung...</div>
+        </div>
+    </div>
+
+    <div id="gallery-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal-btn" onclick="closeModal('gallery-modal')">×</span>
+            <h2 class="modal-title" id="gallery-title">HÌNH ẢNH TẠI DI TÍCH</h2>
+            <div class="gallery-grid">
+                </div>
+        </div>
+    </div>
+
+    <div id="lightbox-modal" class="modal-overlay">
+        <span class="close-lightbox-btn" onclick="closeLightbox()">×</span>
+
+        <button class="lb-nav-btn lb-left" onclick="prevImage(event)">❮</button>
+        <button class="lb-nav-btn lb-right" onclick="nextImage(event)">❯</button>
+
+        <div id="lightbox-img-container">
+            <img id="lightbox-img" src="" alt="Ảnh phóng to">
+        </div>
+
+        <div class="lb-zoom-controls">
+            <button onclick="zoomLightbox(0.2, event)">+</button>
+            <button onclick="resetZoom(event)">↺</button>
+            <button onclick="zoomLightbox(-0.2, event)">-</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
