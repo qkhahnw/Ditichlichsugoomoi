@@ -62,7 +62,7 @@ const siteTranslations = {
         btnOverview: '☰ TỔNG QUAN DI TÍCH',
         btnGallery: '🖼 HÌNH ẢNH TẠI DI TÍCH',
         galleryTitle: 'HÌNH ẢNH TẠI DI TÍCH',
-        footer: 'Công trình được thực hiện bởi <span>Ban Chỉ huy Mùa hè xanh 2026</span><br>Khoa Công nghệ thông tin - Trường Đại học Tôn Đức Thắng.',
+        footer: 'Công trình do <span>Đoàn phường Phú Thuận phối hợp cùng Đoàn khoa Công nghệ thông tin</span><br>Trường Đại học Tôn Đức Thắng.',
         voiceHeader: '🔊 THUYẾT MINH',
         sideTitle: 'Di Tích Lịch Sử Gò Ô Môi',
         sideContent: `

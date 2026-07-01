@@ -41,6 +41,7 @@ header {
     font-size: 10px; font-weight: 700; color: #ffdd00; text-transform: uppercase;
     letter-spacing: 0.5px; text-align: center; line-height: 1.3;
 }
+#logo-right-caption { min-width: 250px; }
 
 /* TÊN DI TÍCH ÉP GIỮA */
 .title-container { text-align: center; z-index: 10; pointer-events: none; }
@@ -58,9 +59,8 @@ header {
 /* VÙNG TƯƠNG TÁC CHÍNH */
 main {
     position: relative; width: 100vw; height: calc(100vh - 145px);
-    background: #e0e5ec; overflow: hidden; display: flex; justify-content: center; align-items: center; cursor: grab;
+    background: #e0e5ec; overflow: hidden; display: flex; justify-content: center; align-items: center;
 }
-main:active { cursor: grabbing; }
 
 #map-container {
     position: relative; display: inline-block; line-height: 0;
@@ -237,6 +237,7 @@ audio { width: 100%; height: 35px; outline: none; border-radius: 8px; }
     .title-container { position: static; padding-bottom: 5px;}
     .title-container h1 { font-size: 18px; }
     .logo-caption { max-width: 140px; }
+    #logo-right-caption { min-width: 0; max-width: 140px; }
 
     #footer-credit { font-size: 11px; padding: 8px 5px; }
     main { height: calc(100vh - 200px); }

@@ -185,24 +185,13 @@ window.onclick = function(event) {
     }
 }
 
-/* --- LOGIC KÉO THẢ, ZOOM TRÊN MAP --- */
+/* --- LOGIC ZOOM TRÊN MAP (ảnh cố định vị trí, không kéo trượt được, chỉ to/nhỏ khi lăn chuột hoặc chụm 2 ngón tay) --- */
 const mainArea = document.getElementById('main-area');
 const container = document.getElementById('map-container');
-let scale = 1, panning = false, pointX = 0, pointY = 0;
-let start = { x: 0, y: 0 }; let initialPinchDistance = null; let initialScale = 1;
+let scale = 1; let initialPinchDistance = null; let initialScale = 1;
 
-function setTransform() { container.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`; }
+function setTransform() { container.style.transform = `scale(${scale})`; }
 
-mainArea.onmousedown = function (e) {
-    if (e.target.closest('#side-menu') || e.target.closest('.menu-buttons-container') || e.target.closest('.pin') || e.target.closest('.modal-content') || e.target.closest('#footer-credit') || e.target.closest('#lightbox-modal')) return;
-    e.preventDefault(); start = { x: e.clientX - pointX, y: e.clientY - pointY }; panning = true; container.style.transition = 'none';
-}
-window.onmouseup = function () { panning = false; container.style.transition = 'transform 0.1s ease-out'; }
-mainArea.onmouseleave = function () { panning = false; }
-mainArea.onmousemove = function (e) {
-    if (!panning) return; e.preventDefault();
-    pointX = (e.clientX - start.x); pointY = (e.clientY - start.y); setTransform();
-}
 mainArea.onwheel = function (e) {
     if (e.target.closest('#side-menu') || e.target.closest('.modal-content') || e.target.closest('#footer-credit') || e.target.closest('#lightbox-modal')) return;
     e.preventDefault(); let zoomFactor = ((e.wheelDelta ? e.wheelDelta : -e.deltaY) > 0) ? 1.1 : 0.9;
@@ -211,27 +200,23 @@ mainArea.onwheel = function (e) {
 
 mainArea.addEventListener('touchstart', function(e) {
     if (e.target.closest('#side-menu') || e.target.closest('.menu-buttons-container') || e.target.closest('.pin') || e.target.closest('.modal-content') || e.target.closest('#footer-credit') || e.target.closest('#lightbox-modal')) return;
-    if (e.touches.length === 1) {
-        panning = true; start = { x: e.touches[0].clientX - pointX, y: e.touches[0].clientY - pointY }; container.style.transition = 'none';
-    } else if (e.touches.length === 2) {
-        panning = false; initialPinchDistance = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    if (e.touches.length === 2) {
+        initialPinchDistance = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
         initialScale = scale; container.style.transition = 'none';
     }
 }, {passive: false});
 
 mainArea.addEventListener('touchmove', function(e) {
     if (e.target.closest('#side-menu') || e.target.closest('.modal-content') || e.target.closest('#footer-credit') || e.target.closest('#lightbox-modal')) return;
-    e.preventDefault();
-    if (panning && e.touches.length === 1) {
-        pointX = (e.touches[0].clientX - start.x); pointY = (e.touches[0].clientY - start.y); setTransform();
-    } else if (e.touches.length === 2 && initialPinchDistance) {
+    if (e.touches.length === 2 && initialPinchDistance) {
+        e.preventDefault();
         let currentDistance = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
         scale = initialScale * (currentDistance / initialPinchDistance);
         if (scale > 3) scale = 3; if (scale < 0.5) scale = 0.5; setTransform();
     }
 }, {passive: false});
 
-mainArea.addEventListener('touchend', function() { panning = false; initialPinchDistance = null; container.style.transition = 'transform 0.1s ease-out'; });
+mainArea.addEventListener('touchend', function() { initialPinchDistance = null; container.style.transition = 'transform 0.1s ease-out'; });
 
 /* --- KHỞI TẠO TRANG --- */
 async function init() {
