@@ -62,7 +62,7 @@ const siteTranslations = {
         btnOverview: '☰ TỔNG QUAN DI TÍCH',
         btnGallery: '🖼 HÌNH ẢNH TẠI DI TÍCH',
         galleryTitle: 'HÌNH ẢNH TẠI DI TÍCH',
-        footer: 'Công trình do <span>Đoàn phường Phú Thuận phối hợp cùng Đoàn khoa Công nghệ thông tin</span><br>Trường Đại học Tôn Đức Thắng.',
+        footer: 'Công trình do <span>Đoàn phường Phú Thuận phối hợp cùng Đoàn khoa Công nghệ thông tin</span><br>Trường Đại học Tôn Đức Thắng thực hiện',
         voiceHeader: '🔊 THUYẾT MINH',
         sideTitle: 'Di Tích Lịch Sử Gò Ô Môi',
         sideContent: `
