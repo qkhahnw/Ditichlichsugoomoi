@@ -171,7 +171,7 @@ const galleryFiles = [
     '/images/gallery/anh-phu-dieu.jpg',
     '/images/gallery/anh-ham-du-kich.jpg',
     '/images/gallery/anh-nha-ve-sinh.jpg',
-    ...Array.from({ length: 14 }, (_, i) => `/images/gallery/anh-bo-sung-${i + 1}.jpg`),
+    ...Array.from({ length: 24 }, (_, i) => `/images/gallery/anh-bo-sung-${i + 1}.jpg`),
     '/images/gallery/anh-bia-da.jpg'
 ];
 
