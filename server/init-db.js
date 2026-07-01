@@ -102,7 +102,7 @@ const siteTranslations = {
         btnOverview: '☰ SITE OVERVIEW',
         btnGallery: '🖼 SITE IMAGES GALLERY',
         galleryTitle: 'IMAGES OF THE SITE',
-        footer: 'Project executed by <span>Green Summer Campaign Command 2026</span><br>Faculty of Information Technology - Ton Duc Thang University.',
+        footer: 'Project executed by <span>Phu Thuan Ward Youth Union in collaboration with the Faculty of Information Technology Youth Union</span><br>Ton Duc Thang University.',
         voiceHeader: '🔊 VOICEOVER',
         sideTitle: 'Go O Moi Historical Site',
         sideContent: `
