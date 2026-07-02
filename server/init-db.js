@@ -172,7 +172,12 @@ const galleryFiles = [
     '/images/gallery/anh-ham-du-kich.jpg',
     '/images/gallery/anh-nha-ve-sinh.jpg',
     ...Array.from({ length: 24 }, (_, i) => `/images/gallery/anh-bo-sung-${i + 1}.jpg`),
-    '/images/gallery/anh-bia-da.jpg'
+    '/images/gallery/anh-bia-da.jpg',
+    '/images/gallery/z7997874511728_6cfccc342efd7b626b094caa9b85b49e.jpg',
+    '/images/gallery/z7997874512379_074712369afdb0e08e6b18b52f2c4235.jpg',
+    '/images/gallery/z7997874512715_b3f3b7ee2bad17ab3bb390204fd19e59.jpg',
+    '/images/gallery/z7997874512716_be6808b3f1c923664ee400562bc67978.jpg',
+    '/images/gallery/z7997874512717_202f99c827cc0e531b1f0725d9d267b3.jpg'
 ];
 
 // ---------- Ghi vào DB ----------
